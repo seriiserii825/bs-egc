@@ -2834,3 +2834,26 @@ body {
 .wpglobus-selector-link.wpglobus-current-language {
 	color: #7dbe87;
 }
+
+.services-block h2 {
+	margin-bottom: 32px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #C6C6C6;
+	position: relative;
+	padding-bottom: 8px;
+	font-weight: 400;
+	font-size: 55px;
+	font: normal normal normal 55px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;
+}
+
+.services-block h2::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	margin-left: -62px;
+	bottom: -10px;
+	width: 120px;
+	background: #7dbe87;
+	height: 10px;
+}

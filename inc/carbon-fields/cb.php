@@ -59,20 +59,7 @@
 				Field::make('text', 'crb_slider_subtitle_title_2_en', __('crb_slider_subtitle_title_2_en'))
 				     ->set_width(30),
 			))
-		         ->add_tab(__('Index intro'), array(
-			         Field::make('text', 'crb_intro_index_title_ro', __('Block index_intro title ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_intro_index_title_ru', __('Block index_intro title ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_intro_index_title_en', __('Block index_intro title en'))
-			              ->set_width(30),
-
-			         Field::make('textarea', 'crb_intro_index_text_ro', __('Block index_intro text ro'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_intro_index_text_ru', __('Block index_intro text ru'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_intro_index_text_en', __('Block index_intro text en'))
-			              ->set_width(30),
+		         ->add_tab(__('Services'), array(
 		         ))
 		         ->add_tab(__('Finance Single'), array(
 			         Field::make('textarea', 'crb_finance_single_text_ro', __('Block finance_single text ro'))

@@ -10,9 +10,9 @@
         </video>
 
         <div class="info">
-            <h1><?php echo carbon_get_theme_option('crb_slider_title'.get_lang()); ?></h1>
+            <h1><?php echo carbon_get_theme_option( 'crb_slider_title' . get_lang() ); ?></h1>
             <p>
-                <span style="    letter-spacing: -4px; margin-right:10px;">---</span> <?php echo carbon_get_theme_option('crb_slider_subtitle_title_2'.get_lang()); ?>
+                <span style="    letter-spacing: -4px; margin-right:10px;">---</span> <?php echo carbon_get_theme_option( 'crb_slider_subtitle_title_2' . get_lang() ); ?>
                 <span style="letter-spacing: -4px;  margin-left:10px;">---</span>
             </p>
             <a class="go-to-services" href="#js-uslugi" class="hidden-xs">
@@ -53,8 +53,8 @@
     </div>
 
 
-    <section id="js-uslugi" class="services">
-        <h2><?php echo carbon_get_theme_option('crb_services_title'.get_lang()); ?></h2>
+    <section id="js-uslugi" class="services-block">
+        <h2><?php echo carbon_get_theme_option( 'crb_services_title' . get_lang() ); ?></h2>
         <div class="container">
             <div class="row">
                 <div class="services-grid">
@@ -63,20 +63,18 @@
 						$wp_query->query( 'showposts=16' );
 						while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
                             <div class="item">
-								<?php $service_link = ''; ?>
-								<?php if ( $currentlang == "ro-RO" ): ?><?php $service_link = '/ro/serviciile-noastre/'; ?><?php elseif ( $currentlang == "en-US" ): ?><?php $service_link = '/en/our-services/'; ?><?php else: ?><?php $service_link = '/nashi-uslugi/'; ?><?php endif; ?>
-                                <a class="services__link" href="<?php echo $service_link; ?>">
+                                <a class="services__link" href="<?php echo get_page_link( 115 ); ?>">
                                     <div class="img">
                                         <img src="<?php the_field( 'usl_image' ); ?>" alt="<?php the_title(); ?>">
                                     </div>
                                 </a>
                                 <div class="content">
-                                    <a href="<?php echo $service_link; ?>">
+                                    <a href="<?php echo get_page_link( 115 ); ?>">
                                         <h3><?php the_title(); ?></h3>
                                     </a>
                                     <div class="exc"><?php the_excerpt(); ?></div>
-                                    <a href="<?php echo $service_link; ?>">
-                                        <!--                                        <span>--><?php //pll_e( 'Узнать больше' ); ?><!-- ></span>-->
+                                    <a href="<?php echo get_page_link( 115 ); ?>">
+                                        <!--<span>--><?php //pll_e( 'Узнать больше' ); ?><!-- ></span>-->
                                     </a>
                                 </div>
                             </div>
