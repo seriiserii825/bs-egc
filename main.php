@@ -1,23 +1,21 @@
 <?php
 	/* Template Name: Главная */
 	get_header();
-?><?php
-	$currentlang = get_bloginfo( 'language' );
 ?>
     <div class="video-bg">
         <div class="bgcolor"></div>
         <div class="bgimg"></div>
         <video autoplay muted loop id="myVideo">
-<!--            <source src="--><?php //the_field( 'video' ); ?><!--" type="video/mp4">-->
+            <source src="<?php the_field( 'video' ); ?>" type="video/mp4">
         </video>
 
         <div class="info">
-            <h1><?php the_field( 'slider_h1' ); ?></h1>
+            <h1><?php echo carbon_get_theme_option('crb_slider_title'.get_lang()); ?></h1>
             <p>
-                <span style="    letter-spacing: -4px; margin-right:10px;">---</span><?php the_field( 'slider_h2' ); ?>
+                <span style="    letter-spacing: -4px; margin-right:10px;">---</span> <?php echo carbon_get_theme_option('crb_slider_subtitle_title_2'.get_lang()); ?>
                 <span style="letter-spacing: -4px;  margin-left:10px;">---</span>
             </p>
-            <a class="go-to-services" href="#uslugi" class="hidden-xs">
+            <a class="go-to-services" href="#js-uslugi" class="hidden-xs">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-down.webp" alt="">
             </a>
         </div>
@@ -55,8 +53,8 @@
     </div>
 
 
-    <section id="uslugi">
-<!--        <h1>--><?php //pll_e( 'УСЛУГИ' ); ?><!--</h1>-->
+    <section id="js-uslugi" class="services">
+        <h2><?php echo carbon_get_theme_option('crb_services_title'.get_lang()); ?></h2>
         <div class="container">
             <div class="row">
                 <div class="services-grid">
@@ -78,7 +76,7 @@
                                     </a>
                                     <div class="exc"><?php the_excerpt(); ?></div>
                                     <a href="<?php echo $service_link; ?>">
-<!--                                        <span>--><?php //pll_e( 'Узнать больше' ); ?><!-- ></span>-->
+                                        <!--                                        <span>--><?php //pll_e( 'Узнать больше' ); ?><!-- ></span>-->
                                     </a>
                                 </div>
                             </div>
@@ -93,7 +91,7 @@
     <section id="about">
         <div class="left">
             <div class="content">
-<!--                <h2>--><?php //pll_e( 'О КОМПАНИИ' ); ?><!--</h2>-->
+                <!--                <h2>--><?php //pll_e( 'О КОМПАНИИ' ); ?><!--</h2>-->
 				<?php the_field( 'about_info' ); ?>
             </div>
         </div>
@@ -126,8 +124,8 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="item">
-<!--                        <h2>--><?php //pll_e( 'НАШИ' ); ?><!--<br>--><?php //pll_e( 'ФИЛИАЛЫ' ); ?><!--</h2>-->
-<!--                        <p>--><?php //pll_e( 'ОБСЛУЖИВАНИЕ ВСЕЙ' ); ?><!-- <br>--><?php //pll_e( 'ТЕРРИТОРИИ МОЛДОВЫ' ); ?><!--</p>-->
+                        <!--                        <h2>--><?php //pll_e( 'НАШИ' ); ?><!--<br>--><?php //pll_e( 'ФИЛИАЛЫ' ); ?><!--</h2>-->
+                        <!--                        <p>--><?php //pll_e( 'ОБСЛУЖИВАНИЕ ВСЕЙ' ); ?><!-- <br>--><?php //pll_e( 'ТЕРРИТОРИИ МОЛДОВЫ' ); ?><!--</p>-->
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -264,7 +262,7 @@
     </section>
 
     <section id="partners">
-<!--        <h1>--><?php //pll_e( 'ПАРТНЕРЫ' ); ?><!--</h1>-->
+        <!--        <h1>--><?php //pll_e( 'ПАРТНЕРЫ' ); ?><!--</h1>-->
         <div class="container">
             <div class="row">
                 <div class="partners-carousel owl-carousel owl-theme carousel-center-active-item carousel-center-active-item-style-2 mb-0">
