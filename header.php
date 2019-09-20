@@ -22,14 +22,17 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <?php wp_head(); ?>
 </head>
 <body>
 <nav class="navbar navbar-default" id="js-header">
     <div class="header-container">
         <ul class="nav navbar-nav navbar-right">
-            <ul class="drop-menu">
-				<?php pll_the_languages(); ?>
-            </ul>
+            <div class="wpglobus-lang">
+		        <?php if ( ! dynamic_sidebar( 'wpglobus' ) ): ?>
+                    <h2>wpglobus widget</h2>
+		        <?php endif; ?>
+            </div>
         </ul>
         <div class="header-line container">
             <!-- Brand and toggle get grouped for better mobile display -->

@@ -4,19 +4,19 @@
 ?>
 
 <script>
-	$(document).ready(function () {
-		$('.navus li a').each(function () {
-			var largePath = $(this).attr("href");
-			$(this).attr("href", '<?php echo home_url(); ?>' + largePath);
-		});
-	});
+	//$(document).ready(function () {
+	//	$('.navus li a').each(function () {
+	//		var largePath = $(this).attr("href");
+	//		$(this).attr("href", '<?php //echo home_url(); ?>//' + largePath);
+	//	});
+	//});
 </script>
 
 <div class="stat_bg">
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1 col-xs-12">
-                <h1><?php pll_e( 'Наши услуги' ); ?></h1>
+<!--                <h1>--><?php //pll_e( 'Наши услуги' ); ?><!--</h1>-->
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
 <div class="container services-back-link">
     <div class="row">
         <div class="col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
-            <a href="<?php echo home_url(); ?>" class="back">< <?php pll_e( 'Назад' ); ?></a>
+<!--            <a href="--><?php //echo home_url(); ?><!--" class="back">< --><?php //pll_e( 'Назад' ); ?><!--</a>-->
         </div>
     </div>
 </div>

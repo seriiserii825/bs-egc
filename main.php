@@ -8,7 +8,7 @@
         <div class="bgcolor"></div>
         <div class="bgimg"></div>
         <video autoplay muted loop id="myVideo">
-            <source src="<?php the_field( 'video' ); ?>" type="video/mp4">
+<!--            <source src="--><?php //the_field( 'video' ); ?><!--" type="video/mp4">-->
         </video>
 
         <div class="info">
@@ -56,7 +56,7 @@
 
 
     <section id="uslugi">
-        <h1><?php pll_e( 'УСЛУГИ' ); ?></h1>
+<!--        <h1>--><?php //pll_e( 'УСЛУГИ' ); ?><!--</h1>-->
         <div class="container">
             <div class="row">
                 <div class="services-grid">
@@ -78,7 +78,7 @@
                                     </a>
                                     <div class="exc"><?php the_excerpt(); ?></div>
                                     <a href="<?php echo $service_link; ?>">
-                                        <span><?php pll_e( 'Узнать больше' ); ?> ></span>
+<!--                                        <span>--><?php //pll_e( 'Узнать больше' ); ?><!-- ></span>-->
                                     </a>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
     <section id="about">
         <div class="left">
             <div class="content">
-                <h2><?php pll_e( 'О КОМПАНИИ' ); ?></h2>
+<!--                <h2>--><?php //pll_e( 'О КОМПАНИИ' ); ?><!--</h2>-->
 				<?php the_field( 'about_info' ); ?>
             </div>
         </div>
@@ -126,8 +126,8 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="item">
-                        <h2><?php pll_e( 'НАШИ' ); ?><br><?php pll_e( 'ФИЛИАЛЫ' ); ?></h2>
-                        <p><?php pll_e( 'ОБСЛУЖИВАНИЕ ВСЕЙ' ); ?> <br><?php pll_e( 'ТЕРРИТОРИИ МОЛДОВЫ' ); ?></p>
+<!--                        <h2>--><?php //pll_e( 'НАШИ' ); ?><!--<br>--><?php //pll_e( 'ФИЛИАЛЫ' ); ?><!--</h2>-->
+<!--                        <p>--><?php //pll_e( 'ОБСЛУЖИВАНИЕ ВСЕЙ' ); ?><!-- <br>--><?php //pll_e( 'ТЕРРИТОРИИ МОЛДОВЫ' ); ?><!--</p>-->
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -264,7 +264,7 @@
     </section>
 
     <section id="partners">
-        <h1><?php pll_e( 'ПАРТНЕРЫ' ); ?></h1>
+<!--        <h1>--><?php //pll_e( 'ПАРТНЕРЫ' ); ?><!--</h1>-->
         <div class="container">
             <div class="row">
                 <div class="partners-carousel owl-carousel owl-theme carousel-center-active-item carousel-center-active-item-style-2 mb-0">
