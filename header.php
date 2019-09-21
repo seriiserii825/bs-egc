@@ -22,16 +22,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-    <?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 <body>
 <nav class="navbar navbar-default" id="js-header">
     <div class="header-container">
         <ul class="nav navbar-nav navbar-right">
             <div class="wpglobus-lang">
-		        <?php if ( ! dynamic_sidebar( 'wpglobus' ) ): ?>
+				<?php if ( ! dynamic_sidebar( 'wpglobus' ) ): ?>
                     <h2>wpglobus widget</h2>
-		        <?php endif; ?>
+				<?php endif; ?>
             </div>
         </ul>
         <div class="header-line container">
@@ -53,42 +53,24 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="header-bottom" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navus">
-					<?php if ( $currentlang == "ro-RO" ): ?><?php
-						if ( have_rows( 'menu_md', 'options' ) ):
-							while ( have_rows( 'menu_md', 'options' ) ) : the_row();
-								?>
-                                <li>
-                                    <a href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'name' ); ?></a>
-                                </li>
-							<?php
-							endwhile;
-						else :
-						endif;
-						?><?php elseif ( $currentlang == "en-US" ): ?><?php
-						if ( have_rows( 'menu_en', 'options' ) ):
-							while ( have_rows( 'menu_en', 'options' ) ) : the_row();
-								?>
-                                <li>
-                                    <a href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'name' ); ?></a>
-                                </li>
-							<?php
-							endwhile;
-						else :
-						endif;
-						?><?php elseif ( $currentlang == "ru-RU" ): ?><?php
-						if ( have_rows( 'menu', 'options' ) ):
-							while ( have_rows( 'menu', 'options' ) ) : the_row();
-								?>
-                                <li>
-                                    <a href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'name' ); ?></a>
-                                </li>
-							<?php
-							endwhile;
-						else :
-						endif;
-						?><?php endif; ?>
-                </ul>
+				<?php wp_nav_menu( [
+					'theme_location'  => 'menu-top',
+					'menu'            => '',
+					'container'       => '',
+					'container_class' => '',
+					'container_id'    => '',
+					'menu_class'      => 'nav navbar-nav navus',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'           => 0,
+					'walker'          => '',
+				] ); ?>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </div>

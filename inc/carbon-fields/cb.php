@@ -1,272 +1,173 @@
 <?php
 
-	if (!defined('ABSPATH')) {
+	if ( ! defined( 'ABSPATH' ) ) {
 		exit;
 	}
 
 	use Carbon_Fields\Container;
 	use Carbon_Fields\Field;
 
-	add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
-	function crb_attach_theme_options()
-	{
-		$basic_options_container = Container::make('theme_options', __('Carbon fields'))
-			->add_tab(__('Text translate'), array(
-				Field::make('text', 'crb_services_title_ro', __('services_title ro'))
-					 ->set_width(30),
-				Field::make('text', 'crb_services_title_ru', __('services_title ru'))
-					 ->set_width(30),
-				Field::make('text', 'crb_services_title_en', __('services_title en'))
-					 ->set_width(30),
+	add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
+	function crb_attach_theme_options() {
+		$basic_options_container = Container::make( 'theme_options', __( 'Carbon fields' ) )
+		                                    ->add_tab( __( 'Text translate' ), array(
+			                                    Field::make( 'text', 'crb_services_title_ro', __( 'services_title ro' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_services_title_ru', __( 'services_title ru' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_services_title_en', __( 'services_title en' ) )
+			                                         ->set_width( 30 ),
 
-				Field::make('text', 'crb_address_city_ro', __('address_city ro'))
-					 ->set_width(30),
-				Field::make('text', 'crb_address_city_ru', __('address_city ru'))
-					 ->set_width(30),
-				Field::make('text', 'crb_address_city_en', __('address_city en'))
-					 ->set_width(30),
+			                                    Field::make( 'text', 'crb_address_city_ro', __( 'address_city ro' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_address_city_ru', __( 'address_city ru' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_address_city_en', __( 'address_city en' ) )
+			                                         ->set_width( 30 ),
 
-				Field::make('text', 'crb_address_just_city_ro', __('address_just_city ro'))
-					 ->set_width(30),
-				Field::make('text', 'crb_address_just_city_ru', __('address_just_city ru'))
-					 ->set_width(30),
-				Field::make('text', 'crb_address_just_city_en', __('address_just_city en'))
-					 ->set_width(30),
+			                                    Field::make( 'text', 'crb_address_just_city_ro', __( 'address_just_city ro' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_address_just_city_ru', __( 'address_just_city ru' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_address_just_city_en', __( 'address_just_city en' ) )
+			                                         ->set_width( 30 ),
 
-				Field::make('text', 'crb_phone', __('phone'))
-					 ->set_width(30),
-				Field::make('text', 'crb_phone_with_space', __('phone_with_space'))
-					 ->set_width(30),
-				Field::make('text', 'crb_phone_with_space_2', __('phone_with_space_2'))
-					 ->set_width(30),
-			));
+			                                    Field::make( 'text', 'crb_phone', __( 'phone' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_phone_with_space', __( 'phone_with_space' ) )
+			                                         ->set_width( 30 ),
+			                                    Field::make( 'text', 'crb_phone_with_space_2', __( 'phone_with_space_2' ) )
+			                                         ->set_width( 30 ),
+		                                    ) );
 
 		// Add second options page under 'Basic Options'
-		Container::make('theme_options', 'Blocks')
-		         ->set_page_parent($basic_options_container)// reference to a top level container
-		         ->add_tab(__('Slider'), array(
-				Field::make('text', 'crb_slider_title_ro', __('crb_slider_title_ro'))
-				     ->set_width(30),
-				Field::make('text', 'crb_slider_title_ru', __('crb_slider_title_ru'))
-				     ->set_width(30),
-				Field::make('text', 'crb_slider_title_en', __('crb_slider_title_en'))
-				     ->set_width(30),
+		Container::make( 'theme_options', 'Blocks' )
+		         ->set_page_parent( $basic_options_container )// reference to a top level container
+		         ->add_tab( __( 'Slider' ), array(
+				Field::make( 'text', 'crb_slider_title_ro', __( 'crb_slider_title_ro' ) )
+				     ->set_width( 30 ),
+				Field::make( 'text', 'crb_slider_title_ru', __( 'crb_slider_title_ru' ) )
+				     ->set_width( 30 ),
+				Field::make( 'text', 'crb_slider_title_en', __( 'crb_slider_title_en' ) )
+				     ->set_width( 30 ),
 
-				Field::make('text', 'crb_slider_subtitle_title_2_ro', __('crb_slider_subtitle_title_2_ro'))
-				     ->set_width(30),
-				Field::make('text', 'crb_slider_subtitle_title_2_ru', __('crb_slider_subtitle_title_2_ru'))
-				     ->set_width(30),
-				Field::make('text', 'crb_slider_subtitle_title_2_en', __('crb_slider_subtitle_title_2_en'))
-				     ->set_width(30),
-			))
-		         ->add_tab(__('Services'), array(
-		         ))
-		         ->add_tab(__('Finance Single'), array(
-			         Field::make('textarea', 'crb_finance_single_text_ro', __('Block finance_single text ro'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_finance_single_text_ru', __('Block finance_single text ru'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_finance_single_text_en', __('Block finance_single text en'))
-			              ->set_width(30),
+				Field::make( 'text', 'crb_slider_subtitle_title_2_ro', __( 'crb_slider_subtitle_title_2_ro' ) )
+				     ->set_width( 30 ),
+				Field::make( 'text', 'crb_slider_subtitle_title_2_ru', __( 'crb_slider_subtitle_title_2_ru' ) )
+				     ->set_width( 30 ),
+				Field::make( 'text', 'crb_slider_subtitle_title_2_en', __( 'crb_slider_subtitle_title_2_en' ) )
+				     ->set_width( 30 ),
 
+				Field::make( 'file', 'crb_slider_video_src', __( 'crb_slider_video_src' ) )
+				     ->set_value_type( 'url' )
+			) )
+		         ->add_tab( __( 'Services' ), array(
+			         Field::make( 'text', 'crb_services_item_link_ro', __( 'crb_services_item_link_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_services_item_link_ru', __( 'crb_services_item_link_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_services_item_link_en', __( 'crb_services_item_link_en' ) )
+			              ->set_width( 30 ),
+		         ) )
+		         ->add_tab( __( 'About' ), array(
+			         Field::make( 'text', 'crb_about_title_ro', __( 'crb_about_title_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_about_title_ru', __( 'crb_about_title_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_about_title_en', __( 'crb_about_title_en' ) )
+			              ->set_width( 30 ),
 
-			         Field::make('textarea', 'crb_finance_text_ro', __('Block finance_text ro'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_finance_text_ru', __('Block finance_text ru'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_finance_text_en', __('Block finance_text en'))
-			              ->set_width(30),
-		         ))
-		         ->add_tab(__('Buttons'), array(
-			         Field::make('text', 'crb_btn_about_ro', __('Block btn_about ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_btn_about_ru', __('Block btn_about ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_btn_about_en', __('Block btn_about en'))
-			              ->set_width(30),
+			         Field::make( 'rich_text', 'crb_about_text_ro', __( 'crb_about_text_ro' ) ),
+			         Field::make( 'rich_text', 'crb_about_text_ru', __( 'crb_about_text_ru' ) ),
+			         Field::make( 'rich_text', 'crb_about_text_en', __( 'crb_about_text_en' ) ),
+		         ) )
+		         ->add_tab( __( 'Filials' ), array(
+			         Field::make( 'text', 'crb_filials_title_ro', __( 'crb_filials_title_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_filials_title_ru', __( 'crb_filials_title_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_filials_title_en', __( 'crb_filials_title_en' ) )
+			              ->set_width( 30 ),
 
-			         Field::make('text', 'crb_btn_services_ro', __('Block btn_services ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_btn_services_ru', __('Block btn_services ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_btn_services_en', __('Block btn_services en'))
-			              ->set_width(30),
+			         Field::make( 'text', 'crb_filials_text_ro', __( 'crb_filials_text_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_filials_text_ru', __( 'crb_filials_text_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_filials_text_en', __( 'crb_filials_text_en' ) )
+			              ->set_width( 30 ),
 
-		         ))
-		         ->add_tab(__('Connect now'), array(
-			         Field::make('textarea', 'crb_connect_title_ro', __('Block connect_title ro'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_connect_title_ru', __('Block connect_title ru'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_connect_title_en', __('Block connect_title en'))
-			              ->set_width(30),
+			         Field::make( 'complex', 'crb_filials_cities', __( 'Filials data' ) )
+			              ->add_fields( array(
+				              Field::make( 'text', 'crb_filials_city_class', __( 'crb_filials_city_class' ) ),
+				              Field::make( 'text', 'crb_filials_city_title_ro', __( 'crb_filials_city_title_ro' ) )
+				                   ->set_width( 30 ),
+				              Field::make( 'text', 'crb_filials_city_title_ru', __( 'crb_filials_city_title_ru' ) )
+				                   ->set_width( 30 ),
+				              Field::make( 'text', 'crb_filials_city_title_en', __( 'crb_filials_city_title_en' ) )
+				                   ->set_width( 30 ),
 
-			         Field::make('text', 'crb_connect_text_ro', __('Block connect_text ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_connect_text_ru', __('Block connect_text ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_connect_text_en', __('Block connect_text en'))
-			              ->set_width(30),
+				              Field::make( 'text', 'crb_filials_phone_long', __( 'crb_filials_phone_long' ) )
+				                   ->set_width( 30 ),
+				              Field::make( 'text', 'crb_filials_phone_short', __( 'crb_filials_phone_short' ) )
+				                   ->set_width( 30 ),
+			              ) )
+			              ->set_layout( 'tabbed-horizontal' )
 
-			         Field::make('text', 'crb_connect_phone', __('Block connect_phone'))
-		         ))
-		         ->add_tab(__('Numbers'), array(
-			         Field::make('complex', 'crb_numbers_fields', __('Fields'))
-			              ->add_fields(array(
-				              Field::make('text', 'crb_numbers_title_ro', __('Block numbers_title ro'))
-				                   ->set_width(30),
-				              Field::make('text', 'crb_numbers_title_ru', __('Block numbers_title ru'))
-				                   ->set_width(30),
-				              Field::make('text', 'crb_numbers_title_en', __('Block numbers_title en'))
-				                   ->set_width(30),
+		         ) )
+		         ->add_tab( __( 'Contacts footer' ), array(
+			         Field::make( 'text', 'crb_contacts_title_ro', __( 'crb_contacts_title_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_ru', __( 'crb_contacts_title_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_en', __( 'crb_contacts_title_en' ) )
+			              ->set_width( 30 ),
 
-				              Field::make('text', 'crb_numbers_text', __('Block numbers_text'))
-			              ))
-			              ->set_layout('tabbed-horizontal')
-		         ))
-		         ->add_tab(__('Partners'), array(
-			         Field::make('text', 'crb_partners_title_ro', __('Partners_title ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_partners_title_ru', __('Partners_title ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_partners_title_en', __('Partners_title en'))
-			              ->set_width(30),
+			         Field::make( 'text', 'crb_contacts_title_call_ro', __( 'crb_contacts_title_call_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_call_ru', __( 'crb_contacts_title_call_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_call_en', __( 'crb_contacts_title_call_en' ) )
+			              ->set_width( 30 ),
 
-			         Field::make('complex', 'crb_partners_fields', __('Fields'))
-			              ->add_fields(array(
-				              Field::make('text', 'crb_partners_text', __('Block partners_text')),
-				              Field::make('image', 'crb_partners_img', __('Block partners_img'))
-				                   ->set_value_type('url')
-			              ))
-			              ->set_layout('tabbed-horizontal')
-		         ))
-		         ->add_tab(__('Idea'), array(
-			         Field::make('text', 'crb_idea_title_ro', __('crb_idea_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_idea_title_ru', __('crb_idea_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_idea_title_en', __('crb_idea_title_en'))
-			              ->set_width(30),
+			         Field::make( 'text', 'crb_contacts_title_message_ro', __( 'crb_contacts_title_message_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_message_ru', __( 'crb_contacts_title_message_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_message_en', __( 'crb_contacts_title_message_en' ) )
+			              ->set_width( 30 ),
 
+			         Field::make( 'text', 'crb_contacts_title_address_ro', __( 'crb_contacts_title_address_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_address_ru', __( 'crb_contacts_title_address_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_title_address_en', __( 'crb_contacts_title_address_en' ) )
+			              ->set_width( 30 ),
 
-			         Field::make('text', 'crb_idea_button_read_more_ro', __('crb_idea_button_read_more_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_idea_button_read_more_ru', __('crb_idea_button_read_more_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_idea_button_read_more_en', __('crb_idea_button_read_more_en'))
-			              ->set_width(30),
-		         ))
-		         ->add_tab(__('Consultation'), array(
-			         Field::make('text', 'crb_consultation_title_ro', __('crb_consultation_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_consultation_title_ru', __('crb_consultation_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_consultation_title_en', __('crb_consultation_title_en'))
-			              ->set_width(30),
+			         Field::make( 'text', 'crb_contacts_phone_1', __( 'crb_contacts_phone_1' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_phone_2', __( 'crb_contacts_phone_2' ) )
+			              ->set_width( 30 ),
+		         ) )
+		         ->add_tab( __( 'Numbers' ), array(
+			         Field::make( 'complex', 'crb_slider', __( 'Numbers complex' ) )
+			              ->add_fields( array(
+				              Field::make( 'text', 'crb_numbers_title', __( 'crb_numbers_title' ) ),
 
-			         Field::make('textarea', 'crb_consultation_text_ro', __('crb_consultation_text_ro'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_consultation_text_ru', __('crb_consultation_text_ru'))
-			              ->set_width(30),
-			         Field::make('textarea', 'crb_consultation_text_en', __('crb_consultation_text_en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_consultation_button_ro', __('crb_consultation_button_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_consultation_button_ru', __('crb_consultation_button_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_consultation_button_en', __('crb_consultation_button_en'))
-			              ->set_width(30),
-		         ))
-		         ->add_tab(__('Popup'), array(
-			         Field::make('text', 'crb_popup_title_ro', __('crb_popup_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_popup_title_ru', __('crb_popup_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_popup_title_en', __('crb_popup_title_en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_popup_before_addres_ro', __('crb_popup_before_addres_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_popup_before_addres_ru', __('crb_popup_before_addres_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_popup_before_addres_en', __('crb_popup_before_addres_en'))
-			              ->set_width(30),
-
-		         ))
-		         ->add_tab(__('Back button'), array(
-			         Field::make('text', 'crb_back_button_title_ro', __('crb_back_button_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_back_button_title_ru', __('crb_back_button_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_back_button_title_en', __('crb_back_button_title_en'))
-			              ->set_width(30),
-		         ))
-		         ->add_tab(__('Footer'), array(
-			         Field::make('text', 'crb_footer_title_ro', __('crb_footer_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_title_ru', __('crb_footer_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_title_en', __('crb_footer_title_en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_footer_before_addres_ro', __('crb_footer_before_addres_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_before_addres_ru', __('crb_footer_before_addres_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_before_addres_en', __('crb_footer_before_addres_en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_footer_before_phone_ro', __('crb_footer_before_phone_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_before_phone_ru', __('crb_footer_before_phone_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_before_phone_en', __('crb_footer_before_phone_en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_footer_form_title_ro', __('crb_footer_form_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_form_title_ru', __('crb_footer_form_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_footer_form_title_en', __('crb_footer_form_title_en'))
-			              ->set_width(30),
-		         ))
-		         ->add_tab(__('Last posts'), array(
-			         Field::make('text', 'crb_last_posts_title_ro', __('crb_last_posts_title_ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_last_posts_title_ru', __('crb_last_posts_title_ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_last_posts_title_en', __('crb_last_posts_title_en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_last_posts_all_ro', __('crb_last_posts_all__ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_last_posts_all_ru', __('crb_last_posts_all__ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_last_posts_all_en', __('crb_last_posts_all__en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_for_write_all_ro', __('crb_for_write_all__ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_for_write_all_ru', __('crb_for_write_all__ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_for_write_all_en', __('crb_for_write_all__en'))
-			              ->set_width(30),
-
-			         Field::make('text', 'crb_write_a_comment_all_ro', __('crb_write_a_comment_all__ro'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_write_a_comment_all_ru', __('crb_write_a_comment_all__ru'))
-			              ->set_width(30),
-			         Field::make('text', 'crb_write_a_comment_all_en', __('crb_write_a_comment_all__en'))
-			              ->set_width(30),
-		         ));
+				              Field::make( 'text', 'crb_numbers_text_ro', __( 'crb_numbers_text_ro' ) )
+				                   ->set_width( 30 ),
+				              Field::make( 'text', 'crb_numbers_text_ru', __( 'crb_numbers_text_ru' ) )
+				                   ->set_width( 30 ),
+				              Field::make( 'text', 'crb_numbers_text_en', __( 'crb_numbers_text_en' ) )
+				                   ->set_width( 30 ),
+			              ) )
+			              ->set_layout( 'tabbed-horizontal' )
+		         ) );
 
 
 	}
 
-	add_action('after_setup_theme', 'crb_load');
-	function crb_load()
-	{
-		require_once(__DIR__ . '/../../vendor/autoload.php');
+	add_action( 'after_setup_theme', 'crb_load' );
+	function crb_load() {
+		require_once( __DIR__ . '/../../vendor/autoload.php' );
 		\Carbon_Fields\Carbon_Fields::boot();
 	}

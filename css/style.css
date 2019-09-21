@@ -1949,7 +1949,7 @@ body {
 
 #about {
 	background-image: url("https://static.wixstatic.com/media/6a655aadfbb14fa9a35c9682f792a421.jpg/v1/fill/w_1960,h_890,al_c,q_85,usm_0.66_1.00_0.01/6a655aadfbb14fa9a35c9682f792a421.webp");
-	height: 622px;
+	height: 640px;
 	width: 100%;
 	background-attachment: fixed;
 	background-position: center;
@@ -2039,7 +2039,7 @@ body {
 	text-align: center;
 	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
 	line-height: 70px;
-	margin-top: 62px;
+	margin-top: 42px;
 }
 
 #numbers span {
@@ -2101,6 +2101,9 @@ body {
 	font-size: 25px;
 	font-weight: 400;
 	margin-top: 35px;
+	width: 280px;
+	margin-left: auto;
+	margin-right: auto;
 	position: relative;
 	font-family: avenir-lt-w01_35-light1475496, sans-serif;
 }
@@ -2190,9 +2193,11 @@ body {
 #contacts h2 {
 	position: relative;
 	padding-bottom: 10px;
-	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	/*font-family: avenir-lt-w01_85-heavy1475544, sans-serif;*/
 	font-size: 25px;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	color: rgb(30, 45, 59);
 }
 
@@ -2257,9 +2262,10 @@ body {
 #contacts .phone_head {
 	position: relative;
 	padding-bottom: 20px;
-	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
+	/*font-family: avenir-lt-w01_85-heavy1475544, sans-serif;*/
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
 	font-size: 25px;
-	font-weight: 400;
 	color: rgb(30, 45, 59);
 }
 
@@ -2278,7 +2284,9 @@ body {
 	color: #1d3954;
 	font-size: 25px;
 	margin-top: 58px;
-	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
+	/*font-family: avenir-lt-w01_85-heavy1475544, sans-serif;*/
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
 }
 
 #contacts p {

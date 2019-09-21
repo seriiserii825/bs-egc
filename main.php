@@ -6,7 +6,7 @@
         <div class="bgcolor"></div>
         <div class="bgimg"></div>
         <video autoplay muted loop id="myVideo">
-            <source src="<?php the_field( 'video' ); ?>" type="video/mp4">
+            <source src="<?php echo carbon_get_theme_option('crb_slider_video_src'); ?>" type="video/mp4">
         </video>
 
         <div class="info">
@@ -15,7 +15,7 @@
                 <span style="    letter-spacing: -4px; margin-right:10px;">---</span> <?php echo carbon_get_theme_option( 'crb_slider_subtitle_title_2' . get_lang() ); ?>
                 <span style="letter-spacing: -4px;  margin-left:10px;">---</span>
             </p>
-            <a class="go-to-services" href="#js-uslugi" class="hidden-xs">
+            <a class="go-to-services" href="#uslugi" class="hidden-xs">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-down.webp" alt="">
             </a>
         </div>
@@ -53,7 +53,7 @@
     </div>
 
 
-    <section id="js-uslugi" class="services-block">
+    <section id="uslugi" class="services-block">
         <h2><?php echo carbon_get_theme_option( 'crb_services_title' . get_lang() ); ?></h2>
         <div class="container">
             <div class="row">
@@ -65,16 +65,16 @@
                             <div class="item">
                                 <a class="services__link" href="<?php echo get_page_link( 115 ); ?>">
                                     <div class="img">
-                                        <img src="<?php the_field( 'usl_image' ); ?>" alt="<?php the_title(); ?>">
+										<?php the_post_thumbnail( 'full' ); ?>
                                     </div>
                                 </a>
                                 <div class="content">
                                     <a href="<?php echo get_page_link( 115 ); ?>">
                                         <h3><?php the_title(); ?></h3>
                                     </a>
-                                    <div class="exc"><?php the_excerpt(); ?></div>
+                                    <div class="exc"><?php echo carbon_get_the_post_meta( 'crb_services_item_short_text' . get_lang() ); ?></div>
                                     <a href="<?php echo get_page_link( 115 ); ?>">
-                                        <!--<span>--><?php //pll_e( 'Узнать больше' ); ?><!-- ></span>-->
+                                        <span><?php echo carbon_get_theme_option( 'crb_services_item_link' . get_lang() ); ?> ></span>
                                     </a>
                                 </div>
                             </div>
@@ -89,8 +89,8 @@
     <section id="about">
         <div class="left">
             <div class="content">
-                <!--                <h2>--><?php //pll_e( 'О КОМПАНИИ' ); ?><!--</h2>-->
-				<?php the_field( 'about_info' ); ?>
+                <h2><?php echo carbon_get_theme_option( 'crb_about_title' . get_lang() ); ?></h2>
+                <div class="about__text"><?php echo wpautop( carbon_get_theme_option( 'crb_about_text' . get_lang() ) ); ?></div>
             </div>
         </div>
     </section>
@@ -98,21 +98,15 @@
     <section id="numbers">
         <div class="container">
             <div class="row">
-				<?php
-					if ( have_rows( 'numbers' ) ):
-						while ( have_rows( 'numbers' ) ) : the_row();
-							?>
-                            <div class="col-xs-4 col-md-4 col-sm-4 nums">
-                                <div class="item">
-                                    <p><?php the_sub_field( 'num' ); ?></p>
-                                    <span><?php the_sub_field( 'desription' ); ?></span>
-                                </div>
-                            </div>
-						<?php
-						endwhile;
-					else :
-					endif;
-				?>
+                <?php $numbers = carbon_get_theme_option('crb_slider'); ?>
+                <?php foreach($numbers as $number): ?>
+                    <div class="col-xs-4 col-md-4 col-sm-4 nums">
+                        <div class="item">
+                            <p><?php echo $number['crb_numbers_title']; ?></p>
+                            <span><?php echo $number['crb_numbers_text'.get_lang()]; ?></span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -122,137 +116,28 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="item">
-                        <!--                        <h2>--><?php //pll_e( 'НАШИ' ); ?><!--<br>--><?php //pll_e( 'ФИЛИАЛЫ' ); ?><!--</h2>-->
-                        <!--                        <p>--><?php //pll_e( 'ОБСЛУЖИВАНИЕ ВСЕЙ' ); ?><!-- <br>--><?php //pll_e( 'ТЕРРИТОРИИ МОЛДОВЫ' ); ?><!--</p>-->
+                        <h2><?php echo carbon_get_theme_option('crb_filials_title'.get_lang()); ?></h2>
+                        <p><?php echo carbon_get_theme_option('crb_filials_text'.get_lang()); ?></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
+                    <?php $filials = carbon_get_theme_option('crb_filials_cities'); ?>
                     <div class="carta">
-						<?php if ( $currentlang == "ro-RO" ): ?>
                             <img class="map-with-line" src="<?php echo get_template_directory_uri(); ?>/img/karta.png" alt="">
                             <img class="map-clear" src="<?php echo get_template_directory_uri(); ?>/img/map-clear_trim.png" alt="">
 
-                            <div class="city balti">
+	                    <?php foreach($filials as $filial): ?>
+                            <div class="city <?php echo $filial['crb_filials_city_class']; ?>">
                                 <p>
-                                    <a href="tel:+37379244899">BALTI</a>
+                                    <a href="tel:<?php echo $filial['crb_filials_phone_long']; ?>"><?php echo $filial['crb_filials_city_title'.get_lang()]; ?></a>
                                 </p>
-                                <a href="tel:+37379244899">
+                                <a href="tel:<?php echo $filial['crb_filials_phone_long']; ?>">
                                     <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">079 244 899</span>
+                                    <span class="phone-number"><?php echo $filial['crb_filials_phone_short']; ?></span>
                                 </a>
                             </div>
+                        <?php endforeach; ?>
 
-                            <div class="city ungeni">
-                                <p>
-                                    <a href="tel:+37378634903">UNGHENI</a>
-                                </p>
-                                <a href="tel:+37378634903">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">078 634 903</span>
-                                </a>
-                            </div>
-
-                            <div class="city chisinau">
-                                <p>
-                                    <a href="tel:+37379557587">CHISINAU</a>
-                                </p>
-                                <a href="tel:+37379557587">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">079 557 587</span>
-                                </a>
-                            </div>
-
-                            <div class="city cahul">
-                                <p>
-                                    <a href="tel:+37369994759">CAHUL</a>
-                                </p>
-                                <a href="tel:+37369994759">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">069 994 759</span>
-                                </a>
-                            </div>
-
-						<?php elseif ( $currentlang == "en-US" ): ?>
-                            <img class="map-with-line" src="<?php echo get_template_directory_uri(); ?>/img/karta.png" alt="">
-                            <img class="map-clear" src="<?php echo get_template_directory_uri(); ?>/img/map-clear_trim.png" alt="">
-                            <div class="city balti">
-                                <p>
-                                    <a href="tel:+37379244899">BALTI</a>
-                                </p>
-                                <a href="tel:+37379244899">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">079 244 899</span>
-                                </a>
-                            </div>
-                            <div class="city ungeni">
-                                <p>
-                                    <a href="tel:+37378634903">UNGHENI</a>
-                                </p>
-                                <a href="tel:+37378634903">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">078 634 903</span>
-                                </a>
-                            </div>
-                            <div class="city chisinau">
-                                <p>
-                                    <a href="tel:+37379557587">CHISINAU</a>
-                                </p>
-                                <a href="tel:+37379557587">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">079 557 587</span>
-                                </a>
-
-                            </div>
-                            <div class="city cahul">
-                                <p>
-                                    <a href="tel:+37369994759">CAHUL</a>
-                                </p>
-                                <a href="tel:+37369994759">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">069 994 759</span>
-                                </a>
-                            </div>
-						<?php elseif ( $currentlang == "ru-RU" ): ?>
-                            <img class="map-with-line" src="<?php echo get_template_directory_uri(); ?>/img/karta.png" alt="">
-                            <img class="map-clear" src="<?php echo get_template_directory_uri(); ?>/img/map-clear_trim.png" alt="">
-                            <div class="city balti">
-                                <p>
-                                    <a href="tel:+37379244899">Бельцы</a>
-                                </p>
-                                <a href="tel:+37379244899">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">079 244 899</span>
-                                </a>
-                            </div>
-                            <div class="city ungeni">
-                                <p>
-                                    <a href="tel:+37378634903">Унгены</a>
-                                </p>
-                                <a href="tel:+37378634903">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">078 634 903</span>
-                                </a>
-                            </div>
-                            <div class="city chisinau">
-                                <p>
-                                    <a href="tel:+37379557587">Кишинев</a>
-                                </p>
-                                <a href="tel:+37379557587">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">079 557 587</span>
-                                </a>
-
-                            </div>
-                            <div class="city cahul">
-                                <p>
-                                    <a href="tel:+37369994759">Кагул</a>
-                                </p>
-                                <a href="tel:+37369994759">
-                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                    <span class="phone-number">069 994 759</span>
-                                </a>
-                            </div>
-						<?php endif; ?>
                     </div>
                 </div>
             </div>

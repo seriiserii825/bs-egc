@@ -21,6 +21,7 @@
 			              ->set_width(30),
 			         Field::make('text', 'crb_services_item_short_text_en', __('crb_services_item_short_text_en'))
 			              ->set_width(30),
+
 		         ));
 	}
 

@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1 col-xs-12">
-<!--                <h1>--><?php //pll_e( 'Наши услуги' ); ?><!--</h1>-->
+                <h1><?php the_title(); ?></h1>
             </div>
         </div>
     </div>
@@ -31,12 +31,12 @@
         <div class="loop-bg-<?php echo $count ?>">
             <div class="item-loop item-loop-<?php echo $count ?>">
                 <div class="left">
-                    <img src="<?php the_field( 'usl_image' ); ?>" alt="">
+					<?php the_post_thumbnail( 'full' ); ?>
                 </div>
                 <div class="right">
-                    <h3>
-                        <span style="font-weight:bold;"><?php echo $count ?>.</span> <?php the_title(); ?></h3>
-					<?php the_field( 'usl_description' ); ?>
+                    <h3><span style="font-weight:bold;"><?php echo $count ?>.</span> <?php the_title(); ?></h3>
+<!--					--><?php //the_field( 'usl_description' ); ?>
+	                <?php the_content(); ?>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
 <div class="container services-back-link">
     <div class="row">
         <div class="col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
-<!--            <a href="--><?php //echo home_url(); ?><!--" class="back">< --><?php //pll_e( 'Назад' ); ?><!--</a>-->
+            <!--            <a href="--><?php //echo home_url(); ?><!--" class="back">< --><?php //pll_e( 'Назад' ); ?><!--</a>-->
         </div>
     </div>
 </div>

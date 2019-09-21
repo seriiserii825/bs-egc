@@ -6,14 +6,14 @@
 
 
 	// Глобальные настройки
-	if ( function_exists( 'acf_add_options_page' ) ) {
-		// Глобальные настройки сайта
-		acf_add_options_page( array(
-			'page_title' => 'Настройки сайта',
-			'menu_title' => 'Настройки сайта',
-			//			'parent_slug' => $parent['menu_slug'],
-		) );
-	}
+//	if ( function_exists( 'acf_add_options_page' ) ) {
+//		// Глобальные настройки сайта
+//		acf_add_options_page( array(
+//			'page_title' => 'Настройки сайта',
+//			'menu_title' => 'Настройки сайта',
+//			//			'parent_slug' => $parent['menu_slug'],
+//		) );
+//	}
 
 
 	function bs_euconsult_setup() {
@@ -75,33 +75,5 @@
 
 	add_action( 'widgets_init', 'bs_euconsult_widgets_init' );
 
-	// Удаляем подробнее в записях
-	// function new_excerpt_more( $more ) {
-	//     return '';
-	// }
-	// add_filter('excerpt_more', 'new_excerpt_more');
-
 	//Оnключаем сжатие картинок
 	add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
-
-	// Выключаем Админ Бар
-	//add_filter('show_admin_bar', '__return_false');
-
-	//Выводим переводы строк в polylang
-	//	add_action( 'init', function () {
-	//		pll_register_string( 'УСЛУГИ', 'УСЛУГИ' );
-	//		pll_register_string( 'Узнать больше', 'Узнать больше' );
-	//		pll_register_string( 'О КОМПАНИИ', 'О КОМПАНИИ' );
-	//		pll_register_string( 'НАШИ', 'НАШИ' );
-	//		pll_register_string( 'ФИЛИАЛЫ', 'ФИЛИАЛЫ' );
-	//		pll_register_string( 'ОБСЛУЖИВАНИЕ ВСЕЙ', 'ОБСЛУЖИВАНИЕ ВСЕЙ' );
-	//		pll_register_string( 'ТЕРРИТОРИИ МОЛДОВЫ', 'ТЕРРИТОРИИ МОЛДОВЫ' );
-	//		pll_register_string( 'ПАРТНЕРЫ', 'ПАРТНЕРЫ' );
-	//		pll_register_string( 'КОНТАКТЫ', 'КОНТАКТЫ' );
-	//		pll_register_string( 'Позвоните', 'Позвоните' );
-	//		pll_register_string( 'Напишите нам сообщение', 'Напишите нам сообщение' );
-	//		pll_register_string( 'Наш адрес', 'Наш адрес' );
-	//		pll_register_string( 'Телефон', 'Телефон' );
-	//		pll_register_string( 'Назад', 'Назад' );
-	//		pll_register_string( 'Наши услуги', 'Наши услуги' );
-	//	} );
