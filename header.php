@@ -24,7 +24,7 @@
     <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <nav class="navbar navbar-default" id="js-header">
     <div class="header-container">
         <ul class="nav navbar-nav navbar-right">

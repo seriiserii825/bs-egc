@@ -1,6 +1,7 @@
 <?php
-	/* Template Name: Главная */
+	/* Template Name: Principal */
 	get_header();
+
 ?>
     <div class="video-bg">
         <div class="bgcolor"></div>
@@ -54,7 +55,7 @@
 
 
     <section id="uslugi" class="services-block">
-        <h2><?php echo carbon_get_theme_option( 'crb_services_title' . get_lang() ); ?></h2>
+        <h2 class="section-title"><?php echo carbon_get_theme_option( 'crb_services_title' . get_lang() ); ?></h2>
         <div class="container">
             <div class="row">
                 <div class="services-grid">
@@ -89,7 +90,7 @@
     <section id="about">
         <div class="left">
             <div class="content">
-                <h2><?php echo carbon_get_theme_option( 'crb_about_title' . get_lang() ); ?></h2>
+                <h2 class="section-title"><?php echo carbon_get_theme_option( 'crb_about_title' . get_lang() ); ?></h2>
                 <div class="about__text"><?php echo wpautop( carbon_get_theme_option( 'crb_about_text' . get_lang() ) ); ?></div>
             </div>
         </div>
@@ -116,7 +117,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="item">
-                        <h2><?php echo carbon_get_theme_option('crb_filials_title'.get_lang()); ?></h2>
+                        <h2 class="section-title"><?php echo carbon_get_theme_option('crb_filials_title'.get_lang()); ?></h2>
                         <p><?php echo carbon_get_theme_option('crb_filials_text'.get_lang()); ?></p>
                     </div>
                 </div>

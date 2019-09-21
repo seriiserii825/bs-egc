@@ -1,6 +1,6 @@
 <section id="contacts">
 	<?php if ( is_front_page() ) { ?>
-        <h1><?php echo carbon_get_theme_option('crb_contacts_title'.get_lang()); ?></h1>
+        <h2 class="section-title"><?php echo carbon_get_theme_option('crb_contacts_title'.get_lang()); ?></h2>
 	<?php } ?>
     <div class="container">
         <div class="row">
@@ -13,13 +13,13 @@
                     <h2 class="phone_head"><?php echo carbon_get_theme_option('crb_contacts_title_call'.get_lang()); ?>:
                         <a href="tel:<?php clear_phone($phone1); ?>"><?php echo $phone1; ?></a>
                     </h2>
-                    <h3><?php echo carbon_get_theme_option('crb_contacts_title_call'.get_lang()); ?>:</h3>
+                    <h3><?php echo carbon_get_theme_option('crb_contacts_title_address'.get_lang()); ?>:</h3>
                     <p>
 						<?php
 							$currentlang = get_bloginfo( 'language' );
 						?>
 						<?php if ( $currentlang == "ro-RO" ): ?><?php the_field( 'aress_footer_md', 'options' ); ?><?php elseif ( $currentlang == "en-US" ): ?><?php the_field( 'aress_footer_en', 'options' ); ?><?php elseif ( $currentlang == "ru-RU" ): ?><?php the_field( 'aress_footer', 'options' ); ?><?php endif; ?>
-<!--						--><?php //pll_e( 'Телефон' ); ?><!--:-->
+						<?php echo carbon_get_theme_option('crb_contacts_phone'.get_lang()) ?>:
                         <a href="tel:<?php clear_phone($phone2); ?>"><?php echo $phone2; ?></a>
                     </p>
                 </div>
@@ -27,7 +27,13 @@
             <div class="col-md-5 col-xs-12 footer-form-contacts">
                 <div class="item ">
                     <h2><?php echo carbon_get_theme_option('crb_contacts_title_message'.get_lang()); ?>:</h2>
-					<?php if ( $currentlang == "ro-RO" ): ?><?php echo do_shortcode( '[contact-form-7 id="147" title="Контактная форма md"]' ); ?><?php elseif ( $currentlang == "en-US" ): ?><?php echo do_shortcode( '[contact-form-7 id="148" title="Контактная форма en"]' ); ?><?php elseif ( $currentlang == "ru-RU" ): ?><?php echo do_shortcode( '[contact-form-7 id="146" title="Контактная форма 1"]' ); ?><?php endif; ?>
+					<?php if ( $currentlang == "ro-RO" ): ?>
+                        <?php echo do_shortcode( '[contact-form-7 id="233" title="Forma rom"]' ); ?>
+                    <?php elseif ( $currentlang == "en-US" ): ?>
+                        <?php echo do_shortcode( '[contact-form-7 id="234" title="Form eng"]' ); ?>
+                    <?php elseif ( $currentlang == "ru-RU" ): ?>
+                        <?php echo do_shortcode( '[contact-form-7 id="146" title="Контактная форма rus"]' ); ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -50,14 +56,10 @@
     </div>
 </section>
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1 col-xs-12">
-                <p><?php the_field( 'copy', 'options' ); ?></p>
-                <a href="<?php the_field( 'facebookurl', 'options' ); ?>"
-                " target="_blank" class="facebook"> <i class="fab fa-facebook"></i>                </a>
-            </div>
-        </div>
+    <?php $phoneClear = carbon_get_theme_option('crb_contacts_phone_1'); ?>
+    <div class="footer-buttons">
+        <a target="_blank" class="footer-buttons__phone" href="tel:<?php echo $phoneClear; ?>"><i class="fas fa-phone"></i></a>
+        <a target="_blank" class="footer-buttons__facebook" href="https://msng.link/fm/euconsult.md"><i class="fab fa-facebook-square"></i></a>
     </div>
 </footer></body>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>

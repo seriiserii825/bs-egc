@@ -52,12 +52,6 @@
     </div>
 </div>
 
-<style>
-    .navus li:first-child a {
-        color: #7dbe87;
-    }
-</style>
-
 <?php
 	$currentlang = get_bloginfo( 'language' );
 	if ( $currentlang == "ru-RU" ):

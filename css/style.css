@@ -1650,6 +1650,7 @@ body {
 	transition: all 0.3s ease;
 }
 
+.navbar-default .navbar-nav > li.current-menu-item a,
 .navbar-default .navbar-nav > li > a:hover {
 	color: #7dbe87;
 	-webkit-transition: all 0.3s ease;
@@ -1973,20 +1974,20 @@ body {
 	line-height: 26px;
 }
 
-#about .left .content h2 {
-	position: relative;
-	left: 14px;
-	padding-top: 7px;
-	text-align: center;
-	text-transform: uppercase;
-	color: #C6C6C6;
-	position: relative;
-	margin-bottom: 34px;
-	padding-bottom: 13px;
-	font: normal normal normal 55px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;
-	font-size: 45px;
-	letter-spacing: 2px;
-}
+/*#about .left .content h2 {*/
+/*	position: relative;*/
+/*	left: 14px;*/
+/*	padding-top: 7px;*/
+/*	text-align: center;*/
+/*	text-transform: uppercase;*/
+/*	color: #C6C6C6;*/
+/*	position: relative;*/
+/*	margin-bottom: 34px;*/
+/*	padding-bottom: 13px;*/
+/*	font: normal normal normal 55px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;*/
+/*	font-size: 45px;*/
+/*	letter-spacing: 2px;*/
+/*}*/
 
 #about .left .content p {
 	font-family: helvetica-w01-light, helvetica-w02-light, sans-serif;
@@ -2000,7 +2001,7 @@ body {
 	content: '';
 	position: absolute;
 	left: 50%;
-	margin-left: -70px;
+	transform: translateX(-50%);
 	bottom: -10px;
 	width: 140px;
 	background: #7dbe87;
@@ -2016,7 +2017,6 @@ body {
 	margin-bottom: 0;
 	margin-top: 25px;
 }
-
 #numbers {
 	margin-top: -20px;
 	background: #7dbe87;
@@ -2039,7 +2039,7 @@ body {
 	text-align: center;
 	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
 	line-height: 70px;
-	margin-top: 42px;
+	margin-top: 60px;
 }
 
 #numbers span {
@@ -2087,14 +2087,14 @@ body {
 	right: 8px;
 }
 
-#filial .item h2 {
-	text-transform: uppercase;
-	color: #C6C6C6;
-	font-size: 50px;
-	font-weight: 400;
-	position: relative;
-	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
-}
+/*#filial .item h2 {*/
+/*	text-transform: uppercase;*/
+/*	color: #C6C6C6;*/
+/*	font-size: 50px;*/
+/*	font-weight: 400;*/
+/*	position: relative;*/
+/*	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;*/
+/*}*/
 
 #filial .item p {
 	color: rgb(30, 45, 59);
@@ -2190,16 +2190,16 @@ body {
 	height: 10px;
 }
 
-#contacts h2 {
-	position: relative;
-	padding-bottom: 10px;
-	font-family: "Open Sans", sans-serif;
-	font-weight: 700;
-	/*font-family: avenir-lt-w01_85-heavy1475544, sans-serif;*/
-	font-size: 25px;
-	/*font-weight: 400;*/
-	color: rgb(30, 45, 59);
-}
+/*#contacts h2 {*/
+/*	position: relative;*/
+/*	padding-bottom: 10px;*/
+/*	font-family: "Open Sans", sans-serif;*/
+/*	font-weight: 700;*/
+/*	!*font-family: avenir-lt-w01_85-heavy1475544, sans-serif;*!*/
+/*	font-size: 25px;*/
+/*	!*font-weight: 400;*!*/
+/*	color: rgb(30, 45, 59);*/
+/*}*/
 
 #contacts form input, #contacts form textarea {
 	font-size: 14px;
@@ -2390,9 +2390,6 @@ footer .facebook i {
 	font-weight: normal;
 }
 
-div.wpcf7-response-output {
-	margin: 5em 0.5em 1em;
-}
 
 .stat_bg {
 	width: 100%;
@@ -2553,10 +2550,10 @@ p.phone img {
 	height: 127px;
 }
 
-.wpcf7-response-output,
-.wpcf7-not-valid-tip {
-	display: none !important;
-}
+/*.wpcf7-response-output,*/
+/*.wpcf7-not-valid-tip {*/
+/*	display: none !important;*/
+/*}*/
 
 .wpcf7-not-valid {
 	border: 1px solid red;
@@ -2707,6 +2704,8 @@ body {
 @media screen and (max-width: 775px) {
 	.services-grid {
 		display: block;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 
@@ -2793,14 +2792,24 @@ body {
 	font-size: 16px;
 }
 
+@media screen and (max-width: 768px) {
+	.wpglobus-lang {
+		top: 70px;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.wpglobus-lang {
 		position: absolute;
-		top: 100px;
 		left: 50%;
 		transform: translateX(-50%);
 		margin-left: 0;
 		z-index: 10;
+	}
+
+	.wpglobus-lang .list {
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -2843,25 +2852,97 @@ body {
 	color: #7dbe87;
 }
 
-.services-block h2 {
-	margin-bottom: 32px;
-	text-align: center;
-	text-transform: uppercase;
-	color: #C6C6C6;
-	position: relative;
-	padding-bottom: 8px;
-	font-weight: 400;
-	font-size: 55px;
-	font: normal normal normal 55px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;
-}
+/*.services-block h2 {*/
+/*	margin-bottom: 32px;*/
+/*	text-align: center;*/
+/*	text-transform: uppercase;*/
+/*	color: #C6C6C6;*/
+/*	position: relative;*/
+/*	padding-bottom: 8px;*/
+/*	font-weight: 400;*/
+/*	font-size: 55px;*/
+/*	font: normal normal normal 55px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;*/
+/*}*/
 
 .services-block h2::after {
 	content: '';
 	position: absolute;
 	left: 50%;
-	margin-left: -62px;
+	transform: translateX(-50%);
 	bottom: -10px;
 	width: 120px;
 	background: #7dbe87;
 	height: 10px;
+}
+.section-title {
+	position: relative;
+	margin-bottom: 32px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #C6C6C6;
+	padding-bottom: 8px;
+	font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
+	font-weight: 400;
+	font-size: 55px;
+	line-height: 1.2;
+	/*font: normal normal normal 55px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;*/
+}
+
+.section-title::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -10px;
+	width: 120px;
+	background: #7dbe87;
+	height: 10px;
+}
+
+.footer-buttons {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	background: red;
+	z-index: 100000;
+}
+
+.footer-buttons a {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	height: 100%;
+}
+
+.footer-buttons__phone {
+	background: #63C956;
+}
+
+.footer-buttons__facebook {
+	background: #3C5A99;
+}
+
+.footer-buttons i {
+	font-size: 22px;
+	color: white;
+}
+.page-template-uslugi .section-title {
+	display: none;
+}
+
+div.wpcf7-response-output {
+	position: relative;
+	top: 50px;
+	margin-top: 0;
+	font-size: 12px;
+}
+.wpcf7-not-valid-tip {
+	font-size: 12px !important;
 }

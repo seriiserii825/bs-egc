@@ -143,6 +143,13 @@
 			         Field::make( 'text', 'crb_contacts_title_address_en', __( 'crb_contacts_title_address_en' ) )
 			              ->set_width( 30 ),
 
+			         Field::make( 'text', 'crb_contacts_phone_ro', __( 'crb_contacts_phone_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_phone_ru', __( 'crb_contacts_phone_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_contacts_phone_en', __( 'crb_contacts_phone_en' ) )
+			              ->set_width( 30 ),
+
 			         Field::make( 'text', 'crb_contacts_phone_1', __( 'crb_contacts_phone_1' ) )
 			              ->set_width( 30 ),
 			         Field::make( 'text', 'crb_contacts_phone_2', __( 'crb_contacts_phone_2' ) )

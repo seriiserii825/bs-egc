@@ -148,7 +148,7 @@
 	}
 
 	.nav.navbar-nav.navbar-right a {
-		font-size: 14px;
+		font-size: 18px;
 	}
 
 	.drop-menu {
@@ -199,7 +199,10 @@
 	}
 
 	.video-bg .info h1 {
-		font-size: 1.5em;
+		margin: 0 auto;
+		width: 380px;
+		font-size: 27px;
+		line-height: 30px;
 	}
 
 	.video-bg .info p {
@@ -227,8 +230,16 @@
 	}
 
 	.video-bg .info {
-		padding-top: 60px;
+		top: 108px;
+		padding-top: 0;
 	}
+	.header-container {
+		height: 60px;
+	}
+
+	/*.services-block h2 {*/
+	/*	font-size: 32px;*/
+	/*}*/
 
 	#numbers {
 		height: auto;
@@ -293,6 +304,25 @@
 
 
 @media screen and (max-width: 768px) {
+
+	.section-title {
+		margin-bottom: 10px;
+		padding-bottom: 12px;
+		font-size: 32px;
+	}
+
+	.section-title::after {
+		width: 80px;
+	}
+	.about__text {
+		padding-top: 40px;
+	}
+	#filial .item {
+		left: 0;
+	}
+	.footer-buttons {
+		display: flex;
+	}
 	.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
 		background: #fff;
 	}
@@ -381,31 +411,71 @@
 	.bottom-info {
 		display: none;
 	}
-
-	.video-bg {
-		height: 230px;
+	#numbers .item {
+		top: 0;
 	}
 
+	#numbers p {
+		margin-top: 20px;
+		line-height: 24px;
+	}
+
+	/*#filial .item h2 {*/
+	/*	position: relative;*/
+	/*	padding-bottom: 8px;*/
+	/*	font-size: 30px;*/
+	/*}*/
+
+	#about .left .content h2 {
+		left: 0;
+	}
+	#about .left .content h2:before {
+		width: 80px;
+	}
+	.services-block h2::after {
+		width: 80px;
+		transform: translateX(-50%);
+	}
+
+	#uslugi .item h3 {
+		left: 0;
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	#uslugi .item .content {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.video-bg {
+		height: 350px;
+	}
+	.info .go-to-services img {
+		width: 40px;
+	}
 	#uslugi h1 {
 		font-size: 32px;
 	}
 
 	#uslugi {
 		margin-top: 26px;
+		margin-bottom: 0;
 	}
 
+	#about {
+		padding-bottom: 0;
+	}
 	#about .left {
+		margin-bottom: 0;
 		padding-top: 10px;
 		padding-left: 15px;
 		padding-right: 15px;
+		padding-bottom: 30px;
 		max-width: 100%;
 		width: 100%;
 	}
-
-	#about .left .content h2 {
-		font-size: 30px;
+	#about .left .content p {
+		line-height: 26px;
 	}
-
 	#filial .item {
 		padding-left: 0;
 	}
@@ -457,7 +527,9 @@
 		top: 262px;
 		left: 104px;
 	}
-
+	#filial {
+		padding-bottom: 60px;
+	}
 	#filial .map-with-line {
 		display: none;
 	}
@@ -494,7 +566,7 @@
 	}
 
 	#filial .item p {
-		margin-top: 10px;
+		margin-top: 20px;
 	}
 
 	#filial .item h1 br {
@@ -503,10 +575,6 @@
 
 	#partners {
 		display: none;
-	}
-
-	#contacts {
-		padding-top: 40px;
 	}
 
 	#contacts h1 {
@@ -524,10 +592,13 @@
 	}
 
 	#contacts h3 {
+		margin-top: 40px;
+		font-size: 19px;
 		text-align: center;
 	}
 
 	#contacts p {
+		font-size: 15px;
 		text-align: center;
 	}
 
@@ -536,10 +607,13 @@
 	}
 
 	.stat_bg {
-		height: 148px;
+		height: 130px;
 	}
 
 	.stat_bg h1 {
+		position: static;
+		padding-bottom: 6px;
+		padding-top: 30px;
 		font-size: 30px;
 		text-align: center;
 	}
@@ -548,16 +622,21 @@
 		left: 50%;
 		transform: translateX(-50%);
 	}
-
+	.page-template-uslugi .wpglobus-lang {
+		top: 40px;
+	}
 	.item-loop {
-		padding-top: 20px;
-		padding-bottom: 20px;
+		padding: 0 15px;
+		padding-top: 15px;
 	}
-
 	.item-loop h3 {
+		margin-left: 0;
 		font-size: 16px;
+		padding-right: 15px;
 	}
-
+	#contacts .item.first {
+		margin-left: 0;
+	}
 	.item-loop p,
 	.item-loop li {
 		font-size: 14px;
@@ -568,7 +647,22 @@
 	}
 
 	#contacts .phone_head {
+		font-size: 19px;
 		text-align: center;
+	}
+
+	.page-template-uslugi #contacts .phone_head::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -10px;
+		width: 80px;
+		background: #7dbe87;
+		height: 10px;
+	}
+	body {
+		padding-bottom: 30px;
 	}
 }
 
@@ -598,6 +692,33 @@
 		font-size: 15px;
 	}
 }
+@media screen and (max-width: 450px) {
+	.carta p a {
+		font-size: 16px;
+	}
+	#filial .map-clear {
+		right: -14px;
+	}
+	.balti {
+		left: -16px;
+	}
+	.ungeni {
+		left: 4px;
+	}
+	.chisinau {
+		left: 12px;
+	}
+	.cahul {
+		left: 58px
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.video-bg .info h1 {
+		width: auto;
+	}
+}
+
 
 
 
