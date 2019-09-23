@@ -27,21 +27,22 @@
 	$wp_query = null;
 	$wp_query = new WP_Query();
 	$wp_query->query( 'showposts=16' . '&paged=' . $paged );
-	while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?><?php $count ++ ?>
-        <div class="loop-bg-<?php echo $count ?>">
+	$i = 1;
+	while ( $wp_query->have_posts() ) : ?>
+        <?php $wp_query->the_post(); ?><?php $count ++ ?>
+        <div id="js-service-item-<?php echo $i; ?>" class="loop-bg-<?php echo $count ?>">
             <div class="item-loop item-loop-<?php echo $count ?>">
                 <div class="left">
 					<?php the_post_thumbnail( 'full' ); ?>
                 </div>
                 <div class="right">
                     <h3><span style="font-weight:bold;"><?php echo $count ?>.</span> <?php the_title(); ?></h3>
-<!--					--><?php //the_field( 'usl_description' ); ?>
 	                <?php the_content(); ?>
                 </div>
             </div>
         </div>
         <div style="clear:both"></div>
-	<?php endwhile; ?>
+	<?php $i++; endwhile; ?>
 <?php wp_reset_postdata(); ?>
 
 <div class="container services-back-link">

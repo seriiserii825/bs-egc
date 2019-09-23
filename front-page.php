@@ -64,17 +64,17 @@
 						$wp_query->query( 'showposts=16' );
 						while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
                             <div class="item">
-                                <a class="services__link" href="<?php echo get_page_link( 115 ); ?>">
+                                <a class="services__link" href="<?php echo carbon_get_the_post_meta('crb_services_link'.get_lang()); ?>">
                                     <div class="img">
 										<?php the_post_thumbnail( 'full' ); ?>
                                     </div>
                                 </a>
                                 <div class="content">
-                                    <a href="<?php echo get_page_link( 115 ); ?>">
+                                    <a href="<?php echo carbon_get_the_post_meta('crb_services_link'.get_lang()); ?>">
                                         <h3><?php the_title(); ?></h3>
                                     </a>
                                     <div class="exc"><?php echo carbon_get_the_post_meta( 'crb_services_item_short_text' . get_lang() ); ?></div>
-                                    <a href="<?php echo get_page_link( 115 ); ?>">
+                                    <a href="<?php echo carbon_get_the_post_meta('crb_services_link'.get_lang()); ?>">
                                         <span><?php echo carbon_get_theme_option( 'crb_services_item_link' . get_lang() ); ?> ></span>
                                     </a>
                                 </div>

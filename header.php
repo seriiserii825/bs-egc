@@ -55,9 +55,9 @@
                     </div>
                 </div>
 
-                <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                    <img src="<?php the_field( 'logo', 'options' ); ?>" alt="" class="logo">
-                </a>
+                <div class="navbar-brand">
+                    <?php the_custom_logo(); ?>
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

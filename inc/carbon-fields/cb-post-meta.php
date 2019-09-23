@@ -22,6 +22,12 @@
 			         Field::make('text', 'crb_services_item_short_text_en', __('crb_services_item_short_text_en'))
 			              ->set_width(30),
 
+			         Field::make( 'text', 'crb_services_link_ro', __( 'crb_services_link_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_services_link_ru', __( 'crb_services_link_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_services_link_en', __( 'crb_services_link_en' ) )
+			              ->set_width( 30 ),
 		         ));
 	}
 

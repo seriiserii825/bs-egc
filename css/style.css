@@ -2946,4 +2946,29 @@ div.wpcf7-response-output {
 .wpcf7-not-valid-tip {
 	font-size: 12px !important;
 }
+.navbar-brand {
+	width: 180px;
+	height: 79px;
+	background: #f7f7f7;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+	background: #f7f7f7;
+}
+@media screen and (max-width: 768px) {
+	.navbar-brand {
+		background: white;
+	}
+	.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+		background: white;
+	}
+}
 
+
+.navbar-brand a {
+	width: 100%;
+}
+
+.navbar-brand img {
+	width: 100%;
+	height: auto;
+}
