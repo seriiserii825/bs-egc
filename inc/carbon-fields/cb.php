@@ -18,6 +18,8 @@
 			                                    Field::make( 'text', 'crb_services_title_en', __( 'services_title en' ) )
 			                                         ->set_width( 30 ),
 
+			                                    Field::make( 'text', 'crb_email', __( 'email' ) ),
+
 			                                    Field::make( 'text', 'crb_address_city_ro', __( 'address_city ro' ) )
 			                                         ->set_width( 30 ),
 			                                    Field::make( 'text', 'crb_address_city_ru', __( 'address_city ru' ) )
@@ -154,6 +156,21 @@
 			              ->set_width( 30 ),
 			         Field::make( 'text', 'crb_contacts_phone_2', __( 'crb_contacts_phone_2' ) )
 			              ->set_width( 30 ),
+		         ) )
+		         ->add_tab( __( 'Partners' ), array(
+			         Field::make( 'text', 'crb_partners_title_ro', __( 'crb_partners_title_ro' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_partners_title_ru', __( 'crb_partners_title_ru' ) )
+			              ->set_width( 30 ),
+			         Field::make( 'text', 'crb_partners_title_en', __( 'crb_partners_title_en' ) )
+			              ->set_width( 30 ),
+
+			         Field::make( 'complex', 'crb_partners_slider', __( 'Partners_slider' ) )
+			              ->add_fields( array(
+				              Field::make( 'image', 'crb_image', __( 'crb_image' ) )
+				              ->set_value_type('url')
+			              ) )
+			              ->set_layout( 'tabbed-horizontal' )
 		         ) )
 		         ->add_tab( __( 'Numbers' ), array(
 			         Field::make( 'complex', 'crb_slider', __( 'Numbers complex' ) )

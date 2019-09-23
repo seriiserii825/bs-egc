@@ -7,7 +7,7 @@
         <div class="bgcolor"></div>
         <div class="bgimg"></div>
         <video autoplay muted loop id="myVideo">
-            <source src="<?php echo carbon_get_theme_option('crb_slider_video_src'); ?>" type="video/mp4">
+            <source src="<?php echo carbon_get_theme_option( 'crb_slider_video_src' ); ?>" type="video/mp4">
         </video>
 
         <div class="info">
@@ -26,12 +26,12 @@
                 <div class="address-bar">
                     <p class="location">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/ic1.png" alt="">
-                        <span><?php the_field( 'adress' ); ?></span>
+                        <span><?php echo carbon_get_theme_option( 'crb_address_city' . get_lang() ); ?></span>
                     </p>
                     <p class="mail">
                         <a href="mailto:<?php the_field( 'mail' ); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ic2.png" alt="">
-                            <span><?php the_field( 'mail' ); ?></span>
+                            <span><?php echo carbon_get_theme_option( 'crb_email' ); ?></span>
                         </a>
                     </p>
                     <p class="phone">
@@ -99,15 +99,15 @@
     <section id="numbers">
         <div class="container">
             <div class="row">
-                <?php $numbers = carbon_get_theme_option('crb_slider'); ?>
-                <?php foreach($numbers as $number): ?>
+				<?php $numbers = carbon_get_theme_option( 'crb_slider' ); ?>
+				<?php foreach ( $numbers as $number ): ?>
                     <div class="col-xs-4 col-md-4 col-sm-4 nums">
                         <div class="item">
                             <p><?php echo $number['crb_numbers_title']; ?></p>
-                            <span><?php echo $number['crb_numbers_text'.get_lang()]; ?></span>
+                            <span><?php echo $number[ 'crb_numbers_text' . get_lang() ]; ?></span>
                         </div>
                     </div>
-                <?php endforeach; ?>
+				<?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -117,27 +117,27 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="item">
-                        <h2 class="section-title"><?php echo carbon_get_theme_option('crb_filials_title'.get_lang()); ?></h2>
-                        <p><?php echo carbon_get_theme_option('crb_filials_text'.get_lang()); ?></p>
+                        <h2 class="section-title"><?php echo carbon_get_theme_option( 'crb_filials_title' . get_lang() ); ?></h2>
+                        <p><?php echo carbon_get_theme_option( 'crb_filials_text' . get_lang() ); ?></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <?php $filials = carbon_get_theme_option('crb_filials_cities'); ?>
+					<?php $filials = carbon_get_theme_option( 'crb_filials_cities' ); ?>
                     <div class="carta">
-                            <img class="map-with-line" src="<?php echo get_template_directory_uri(); ?>/img/karta.png" alt="">
-                            <img class="map-clear" src="<?php echo get_template_directory_uri(); ?>/img/map-clear_trim.png" alt="">
+                        <img class="map-with-line" src="<?php echo get_template_directory_uri(); ?>/img/karta.png" alt="">
+                        <img class="map-clear" src="<?php echo get_template_directory_uri(); ?>/img/map-clear_trim.png" alt="">
 
-	                    <?php foreach($filials as $filial): ?>
+						<?php foreach ( $filials as $filial ): ?>
                             <div class="city <?php echo $filial['crb_filials_city_class']; ?>">
                                 <p>
-                                    <a href="tel:<?php echo $filial['crb_filials_phone_long']; ?>"><?php echo $filial['crb_filials_city_title'.get_lang()]; ?></a>
+                                    <a href="tel:<?php echo $filial['crb_filials_phone_long']; ?>"><?php echo $filial[ 'crb_filials_city_title' . get_lang() ]; ?></a>
                                 </p>
                                 <a href="tel:<?php echo $filial['crb_filials_phone_long']; ?>">
                                     <i class="fas fa-phone-alt" aria-hidden="true"></i>
                                     <span class="phone-number"><?php echo $filial['crb_filials_phone_short']; ?></span>
                                 </a>
                             </div>
-                        <?php endforeach; ?>
+						<?php endforeach; ?>
 
                     </div>
                 </div>
@@ -146,16 +146,15 @@
     </section>
 
     <section id="partners">
-        <!--        <h1>--><?php //pll_e( 'ПАРТНЕРЫ' ); ?><!--</h1>-->
+        <h2 class="section-title"><?php echo carbon_get_theme_option( 'crb_partners_title' . get_lang() ); ?></h2>
         <div class="container">
             <div class="row">
                 <div class="partners-carousel owl-carousel owl-theme carousel-center-active-item carousel-center-active-item-style-2 mb-0">
 
-
 					<?php
-						$images = get_field( 'partners' );
+						$images = carbon_get_theme_option( 'crb_partners_slider' );
 						if ( $images ): ?><?php foreach ( $images as $image ): ?>
-                            <img src="<?php echo $image; ?>" alt=""/>
+                            <img src="<?php echo $image['crb_image']; ?>" alt=""/>
 						<?php endforeach; ?><?php endif; ?>
 
                 </div>

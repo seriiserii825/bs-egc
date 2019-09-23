@@ -23,6 +23,15 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 	<?php wp_head(); ?>
+
+	<?php if(get_lang() == '_ru'): ?>
+        <script src="//code.jivosite.com/widget.js" data-jv-id="jgW4W8p7cB" async></script>
+	<?php elseif(get_lang() == '_en'): ?>
+        <script src="//code.jivosite.com/widget.js" data-jv-id="jLIPK3pKU9" async></script>
+	<?php else:  ?>
+        <script src="//code.jivosite.com/widget.js" data-jv-id="BAuSBURt3l" async></script>
+	<?php endif; ?>
+
 </head>
 <body <?php body_class(); ?>>
 <nav class="navbar navbar-default" id="js-header">

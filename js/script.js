@@ -51,6 +51,8 @@ $(document).ready(function () {
 		if($(window).width() < 768){
 			if(!$('#menu-menu-1 li:nth-child(2)').hasClass('current-menu-item')){
 				$('#menu-menu-1 li:first-child').addClass('current-menu-item');
+				$('#menu-menu-1 li:nth-child(3)').removeClass('current-menu-item');
+				$('#menu-menu-1 li:nth-child(4)').removeClass('current-menu-item');
 			}
 		}
 	};

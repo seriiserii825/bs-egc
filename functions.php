@@ -76,4 +76,4 @@
 	add_action( 'widgets_init', 'bs_euconsult_widgets_init' );
 
 	//Оnключаем сжатие картинок
-	add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+//	add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );

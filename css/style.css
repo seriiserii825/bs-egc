@@ -2341,7 +2341,7 @@ footer .facebook i {
 
 .item-loop h3 {
 	color: rgb(59, 58, 58);
-	margin: 0 0 20px 20px;
+	margin-bottom: 20px;
 	font-family: helvetica-w01-light, helvetica-w02-light, sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
@@ -2946,3 +2946,4 @@ div.wpcf7-response-output {
 .wpcf7-not-valid-tip {
 	font-size: 12px !important;
 }
+
