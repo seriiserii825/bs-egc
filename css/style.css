@@ -1778,9 +1778,6 @@ body {
 }
 
 .video-bg .info p {
-	position: relative;
-	top: -6px;
-	left: -12px;
 	font-size: 25px;
 	line-height: 120px;
 	font-family: raleway, sans-serif;

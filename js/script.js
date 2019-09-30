@@ -48,16 +48,29 @@ $(document).ready(function () {
 	closeMenuAfterClick();
 
 	let menuFirstItemActive = function () {
-		if($(window).width() < 768){
-			if(!$('#menu-menu-1 li:nth-child(2)').hasClass('current-menu-item')){
+		if ($(window).width() < 768) {
+			if (!$('#menu-menu-1 li:nth-child(2)').hasClass('current-menu-item')) {
 				$('#menu-menu-1 li:first-child').addClass('current-menu-item');
 			}
 		}
 
-		if(!$('#menu-menu-1 li:nth-child(2)').hasClass('current-menu-item')){
-			$('#menu-menu-1 li:nth-child(3)').removeClass('current-menu-item');
-			$('#menu-menu-1 li:nth-child(4)').removeClass('current-menu-item');
+		// if(!$('#menu-menu-1 li:nth-child(2)').hasClass('current-menu-item')){
+		// 	$('#menu-menu-1 li:nth-child(3)').removeClass('current-menu-item');
+		// 	$('#menu-menu-1 li:nth-child(4)').removeClass('current-menu-item');
+		// }
+	};
+	// menuFirstItemActive();
+
+	let activeMenuItem = function () {
+		let url = location.href;
+		console.log(url);
+		if ($(window).width() > 768) {
+			$('#menu-menu-1 li').removeClass('current-menu-item');
+			if ($(url.includes('about'))) {
+				console.log(url.includes('about'));
+				// $('#menu-menu-1 li a[href="https://egc.md/#about"]').parent('li').addClass('current-menu-item');
+			}
 		}
 	};
-	menuFirstItemActive();
+	activeMenuItem();
 });
