@@ -2810,11 +2810,6 @@ body {
 	}
 }
 
-.wpglobus-lang .list {
-	position: relative;
-	top: -2px;
-}
-
 .wpglobus-selector-link {
 	margin-left: 10px;
 	font-family: 'Raleway', sans-serif;
@@ -3035,6 +3030,8 @@ div.wpcf7-response-output {
 		right: 5% !important;
 	}
 }
-
+#menu-menu-1 li .mPS2id-highlight {
+	color: #7dbe87;
+}
 
 
