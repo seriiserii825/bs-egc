@@ -30,6 +30,7 @@
 	$i = 1;
 	while ( $wp_query->have_posts() ) : ?>
         <?php $wp_query->the_post(); ?><?php $count ++ ?>
+    
         <div id="js-service-item-<?php echo $i; ?>" class="loop-bg-<?php echo $count ?>">
             <div class="item-loop item-loop-<?php echo $count ?>">
                 <div class="left">
