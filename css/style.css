@@ -1669,6 +1669,10 @@ body {
 	font-size: 15px;
 }
 
+.navbar-default .navbar-nav.nav > li:last-child a {
+	margin-right: 0;
+}
+
 .drop-menu li {
 	display: inline-block;
 }
@@ -2787,6 +2791,24 @@ body {
 .wpglobus-lang a {
 	margin-left: 11px;
 	font-size: 16px;
+}
+
+@media screen and (max-width: 1450px) {
+	.wpglobus-lang {
+		margin-left: -20px;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.wpglobus-lang {
+		margin-left: -60px;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.wpglobus-lang {
+		margin-left: 40px;
+	}
 }
 
 @media screen and (max-width: 768px) {

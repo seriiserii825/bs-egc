@@ -57,7 +57,7 @@
 	}
 
 	.nav.navbar-nav {
-		margin-left: 0px;
+		margin-left: 24px;
 	}
 
 	.navbar-default .navbar-nav.nav > li > a {
@@ -365,6 +365,14 @@
 
 	.navbar-default .navbar-toggle .icon-bar {
 		background: #C6C6C6;
+	}
+
+	.nav.navbar-nav {
+		margin-left: 0;
+	}
+
+	.navbar-default .navbar-nav.nav > li:last-child a {
+		margin-right: 35px;
 	}
 
 	.sandwitch-wrap {
